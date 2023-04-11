@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw();">
+<!-- id:标识元素的唯一性width:画布的宽度height:画布的高度 -->
+<canvas id="canvas" width="600" height="400">
+    当前浏览器不支持canvas.请下载最新的浏览器
+    <a href="https : //wvv .google.cn/int1/zh-CN/ chrome/">立即下载</a>
+</canvas>
+</body>
+<script>
+    function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  // 画背景
+  ctx.fillStyle = '#FD0';
+  ctx.fillRect(0,0,75,75);
+  ctx.fillStyle = '#6C0';
+  ctx.fillRect(75,0,75,75);
+  ctx.fillStyle = '#09F';
+  ctx.fillRect(0,75,75,75);
+  ctx.fillStyle = '#F30';
+  ctx.fillRect(75,75,75,75);
+  ctx.fillStyle = '#FFF';
+
+  // 设置透明度值
+  ctx.globalAlpha = 0.2;
+
+  // 画半透明圆
+  for (var i=0;i<7;i++){
+      ctx.beginPath();
+      ctx.arc(75,75,10+10*i,0,Math.PI*2,true);
+      ctx.fill();
+  }
+}
+</script>
+
+
+</html>

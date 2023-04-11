@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw();">
+<!-- id:标识元素的唯一性width:画布的宽度height:画布的高度 -->
+<canvas id="canvas" width="600" height="400">
+    当前浏览器不支持canvas.请下载最新的浏览器
+    <a href="https : //wvv .google.cn/int1/zh-CN/ chrome/">立即下载</a>
+</canvas>
+</body>
+<script>
+    function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 2;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+  ctx.font = "20px Times New Roman";
+  ctx.fillStyle = "Black";
+  ctx.fillText("Sample String", 5, 30);
+}
+</script>
+
+
+</html>

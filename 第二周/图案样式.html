@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw();">
+<!-- id:标识元素的唯一性width:画布的宽度height:画布的高度 -->
+<canvas id="canvas" width="600" height="400">
+    当前浏览器不支持canvas.请下载最新的浏览器
+    <a href="https : //wvv .google.cn/int1/zh-CN/ chrome/">立即下载</a>
+</canvas>
+</body>
+<script>
+  function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  // 创建新 image 对象，用作图案
+  var img = new Image();
+  img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+  img.onload = function() {
+
+    // 创建图案
+    var ptrn = ctx.createPattern(img, 'repeat');
+    ctx.fillStyle = ptrn;
+    ctx.fillRect(0, 0, 150, 150);
+
+  }
+}
+</script>
+
+
+</html>

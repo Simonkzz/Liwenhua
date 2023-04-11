@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="draw();">
+<!-- id:标识元素的唯一性width:画布的宽度height:画布的高度 -->
+<canvas id="canvas" width="600" height="400">
+    当前浏览器不支持canvas.请下载最新的浏览器
+    <a href="https : //wvv .google.cn/int1/zh-CN/ chrome/">立即下载</a>
+</canvas>
+</body>
+<script>
+//     function draw() {
+//   var ctx = document.getElementById('canvas').getContext('2d');
+//   for (var i = 0; i < 10; i++){
+//     ctx.lineWidth = 1+i;
+//     ctx.beginPath();
+//     ctx.moveTo(5+i*14,5);
+//     ctx.lineTo(5+i*14,140);
+//     ctx.stroke();
+//   }
+// }
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  var lineCap = ['butt','round','square'];
+
+  // 创建路径
+  ctx.strokeStyle = '#09f';
+  ctx.beginPath();
+  ctx.moveTo(10,10);
+  ctx.lineTo(140,10);
+  ctx.moveTo(10,140);
+  ctx.lineTo(140,140);
+  ctx.stroke();
+
+  // 画线条
+  ctx.strokeStyle = 'black';
+  for (var i=0;i<lineCap.length;i++){
+    ctx.lineWidth = 15;
+    ctx.lineCap = lineCap[i];
+    ctx.beginPath();
+    ctx.moveTo(25+i*50,10);
+    ctx.lineTo(25+i*50,140);
+    ctx.stroke();
+  }
+}
+</script>
+
+
+</html>
